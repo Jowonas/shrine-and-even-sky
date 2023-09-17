@@ -2,7 +2,7 @@
 name: Task Template
 about: Descibes a TODO task
 title: "[TASK-XXXXX] Short Task Description"
-labels: ''
+labels: 'task'
 assignees: ''
 
 ---
