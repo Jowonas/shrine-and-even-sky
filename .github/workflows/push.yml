@@ -1,0 +1,17 @@
+name: push
+run-name: Pre Merge Auto Tasks
+on: [push]
+jobs:
+  pull-request-job:
+    runs-on: windows-latest
+    steps:
+      - name: Python Black
+        uses: cytopia/docker-black@0.11
+        with:
+          path: src/
+      
+      - name: Sphinx Build
+        uses: ammaraskar/sphinx-action@0.4
+        with:
+          docs-folder: docs/
+          build-command: make html
