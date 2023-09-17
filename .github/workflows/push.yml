@@ -3,7 +3,7 @@ run-name: Pre Merge Auto Tasks
 on: [push]
 jobs:
   pull-request-job:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Python Black
         uses: cytopia/docker-black@0.11
