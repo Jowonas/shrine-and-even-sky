@@ -1,22 +1,29 @@
+import textwrap
+
+from mini_games.simple_classics import guess_the_number
+
+
 def main():
-    import random
-    seggs = (random.randint(1, 100))
-    guess = int(input("Gib me ur guess 1-100"))
+    menu: str = textwrap.dedent(
+        """
+        [0] Exit
+        [1] Guess the Number Game
+        Enter one of the above choices to continue: 
+        """
+    )
 
-    while guess != seggs:
+    while True:
+        picked_action = input(menu)
 
-        if guess < seggs:
-
-            print("ur lower")
-        elif guess > seggs:
-
-            print("ur higher")
-        guess = int(input("Gib me ur guess 1-100: "))
-
-    print("damn right")
-
-    #fsafafesf
-
+        match picked_action:
+            case "0":
+                print("Stopping Program...")
+                return 0
+            case "1":
+                guess_the_number()
+            case _:
+                print("Warning: Incorrect Input. Stopping Program...")
+                return 0
 
 
 if __name__ == "__main__":
