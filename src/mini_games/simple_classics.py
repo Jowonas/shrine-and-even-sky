@@ -60,4 +60,3 @@ def rock_paper_scissors() -> None:
         print(f"You beat me. I picked {cpu_pick}")
     else:
         print(f"You have lost. I picked {cpu_pick}")
-
