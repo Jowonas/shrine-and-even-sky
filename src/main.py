@@ -23,10 +23,8 @@ def main():
                 return 0
             case "1":
                 guess_the_number()
-
             case "2":
                 rock_paper_scissors()
-
             case _:
                 print("Warning: Incorrect Input. Stopping Program...")
                 return 0

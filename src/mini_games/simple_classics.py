@@ -38,25 +38,26 @@ def guess_the_number() -> None:
 
     print(f"Congrats, you picked the correct number {picked_number}")
 
+
 def rock_paper_scissors() -> None:
+    """Rock Paper Scissors game following the normal rule set"""
 
-    janken_choices = ["rock","paper","scissors"]
-    cpu_pick = (random.choice(janken_choices))
+    choices: list = ["rock", "paper", "scissors"]
+    cpu_pick: str = random.choice(choices)
+    player_pick: str = input("Pick between rock, paper, or scissors or press enter to cancel:")
+    player_pick = player_pick.lower()
 
-    player_pick = input("Pick between rock, paper, or scissors or press enter to cancel:")
+    if player_pick not in choices:
+        print(f"That is not a valid pick, please make sure to pick one of the following next time: {choices}")
 
     if player_pick == cpu_pick:
         print(f"It's a tie")
-
-    elif (player_pick == 'rock' and cpu_pick == 'scissors'):
-        print (f"You beat me. I picked {cpu_pick}")
-
-    elif (player_pick == 'paper' and cpu_pick == 'rock'):
-        print (f"You beat me. I picked {cpu_pick}")
-
-    elif (player_pick == 'scissors' and cpu_pick == 'paper'):
-        print (f"You beat me. I picked {cpu_pick}")
-
+    elif player_pick == 'rock' and cpu_pick == 'scissors':
+        print(f"You beat me. I picked {cpu_pick}")
+    elif player_pick == 'paper' and cpu_pick == 'rock':
+        print(f"You beat me. I picked {cpu_pick}")
+    elif player_pick == 'scissors' and cpu_pick == 'paper':
+        print(f"You beat me. I picked {cpu_pick}")
     else:
-        print(f"You're a failure. I picked {cpu_pick}")
+        print(f"You have lost. I picked {cpu_pick}")
 
