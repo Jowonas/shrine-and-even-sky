@@ -5,8 +5,6 @@ def guess_the_number() -> None:
     """
     This function implements a typical guess the number game
     it uses a guess loop until the answer is correct
-
-    :return: None
     """
     picked_number: int = random.randint(1, 100)
     guessed_number: int | None = None
@@ -61,11 +59,11 @@ def rock_paper_scissors() -> None:
     else:
         print(f"You have lost. I picked {cpu_pick}")
 
+
 def file_writer() -> None:
     """This function writes userinput into a demofile"""
 
-    user_input = str = input("Write down the message to append to the file: ")
+    user_input: str = input("Write down the message to append to the file: ")
     with open("demofile.txt", "a") as demo_file:
-        demo_file.write(user_input)
-
+        demo_file.write(f"{user_input}\n")
 

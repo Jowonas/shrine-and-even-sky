@@ -1,8 +1,6 @@
 import textwrap
 
-from mini_games.simple_classics import guess_the_number
-from mini_games.simple_classics import rock_paper_scissors
-from mini_games.simple_classics import file_writer
+from mini_games.simple_classics import guess_the_number, rock_paper_scissors, file_writer
 
 
 def main():
