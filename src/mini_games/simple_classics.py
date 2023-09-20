@@ -60,3 +60,12 @@ def rock_paper_scissors() -> None:
         print(f"You beat me. I picked {cpu_pick}")
     else:
         print(f"You have lost. I picked {cpu_pick}")
+
+def file_writer() -> None:
+    """This function writes userinput into a demofile"""
+
+    user_input = str = input("Write down the message to append to the file: ")
+    with open("demofile.txt", "a") as demo_file:
+        demo_file.write(user_input)
+
+
