@@ -1,7 +1,6 @@
 import textwrap
 
-from mini_games.simple_classics import guess_the_number
-from mini_games.simple_classics import rock_paper_scissors
+from mini_games.simple_classics import guess_the_number, rock_paper_scissors, quiz_game
 
 
 def main():
@@ -10,6 +9,7 @@ def main():
         [0] Exit
         [1] Guess the Number Game
         [2] Rock, Paper, Scissors
+        [3] Quiz Game
         Enter one of the above choices to continue: 
         """
     )
@@ -25,6 +25,8 @@ def main():
                 guess_the_number()
             case "2":
                 rock_paper_scissors()
+            case "3":
+                quiz_game()
             case _:
                 print("Warning: Incorrect Input. Stopping Program...")
                 return 0
