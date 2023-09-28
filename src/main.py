@@ -29,7 +29,7 @@ def main():
                 quiz_game()
             case _:
                 print("Warning: Incorrect Input. Stopping Program...")
-                return 0
+                return 1
 
 
 if __name__ == "__main__":
