@@ -1,0 +1,31 @@
+{
+  "$id": "categories.schema.json",
+  "description": "A representation of categories and their respective questions",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "name":{
+        "type": "string"
+      },
+      "questions_answers": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "question": {
+              "type": "string"
+            },
+            "answer": {
+              "type": "string"
+            }
+          },
+          "required": ["question", "answer"]
+        }
+      }
+    },
+    "required": ["name", "questions_answers"]
+  },
+  "minItems": 1,
+  "uniqueItems": true
+}
