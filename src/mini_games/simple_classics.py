@@ -7,8 +7,6 @@ def guess_the_number() -> None:
     """
     This function implements a typical guess the number game
     it uses a guess loop until the answer is correct
-
-    :return: None
     """
     picked_number: int = random.randint(1, 100)
     guessed_number: int | None = None
@@ -93,7 +91,6 @@ def quiz_game() -> None:
                         print(f"Wrong! The correct answer is: {answer}")
 
                 print(f"You got {score} out of {len(questions_answers)} questions correct in {category_name} quiz.")
-
 
     menu: str = textwrap.dedent(
         """

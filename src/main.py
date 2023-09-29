@@ -1,5 +1,6 @@
 import textwrap
 
+from file_handling.file_writers import txt_file_writer
 from mini_games.simple_classics import guess_the_number, rock_paper_scissors, quiz_game
 
 
@@ -10,6 +11,7 @@ def main():
         [1] Guess the Number Game
         [2] Rock, Paper, Scissors
         [3] Quiz Game
+        [4] File Writer
         Enter one of the above choices to continue: 
         """
     )
@@ -27,6 +29,8 @@ def main():
                 rock_paper_scissors()
             case "3":
                 quiz_game()
+            case "4":
+                txt_file_writer()
             case _:
                 print("Warning: Incorrect Input. Stopping Program...")
                 return 1
