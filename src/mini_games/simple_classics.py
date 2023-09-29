@@ -1,4 +1,6 @@
 import random
+import textwrap
+import json
 
 
 def guess_the_number() -> None:
@@ -60,3 +62,62 @@ def rock_paper_scissors() -> None:
         print(f"You beat me. I picked {cpu_pick}")
     else:
         print(f"You have lost. I picked {cpu_pick}")
+
+
+def quiz_game() -> None:
+    """"Quiz game with 3 categories"""
+
+    def __category(category_name):
+        # load the categories out of the json file #
+        with open("mini_games/categories.json") as c_file:
+            categories: list = json.load(c_file)
+        for category in categories:
+            # check if category exists#
+            if category.get("name") == category_name:
+                questions_answers = category["questions_answers"]
+                score = 0
+
+                print(f"{category_name} quiz:\n")
+
+                for q_a in questions_answers:
+                    question = q_a["question"]
+                    answer = q_a["answer"]
+
+                    print(f"{question}")
+                    player_answer = input().lower()
+
+                    if player_answer == answer:
+                        print("Correct!\n")
+                        score += 1
+                    else:
+                        print(f"Wrong! The correct answer is: {answer}")
+
+                print(f"You got {score} out of {len(questions_answers)} questions correct in {category_name} quiz.")
+
+
+    menu: str = textwrap.dedent(
+        """
+        [0] Exit
+        [1] Geography
+        [2] History
+        [3] Anime
+        Pick a category to play: 
+        """
+    )
+
+    while True:
+        picked_action = input(menu)
+
+        match picked_action:
+            case "0":
+                print("Loading back menu...")
+                break
+            case "1":
+                __category("geography")
+            case "2":
+                __category("history")
+            case "3":
+                __category("anime")
+            case _:
+                print("Warning: Incorrect Input. Loading back menu...")
+                break
