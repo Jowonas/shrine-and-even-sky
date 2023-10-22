@@ -39,7 +39,8 @@ CHARACTERS: dict = {
 
 
 @command_log
-def make_owoify(message: str) -> str:
+def make_owoify(message: str | tuple[str]) -> str:
+    message = " ".join(message)
     message = message.lower()
 
     for search_chars, replace_chars in CHARACTERS.items():

@@ -13,7 +13,7 @@ bot = commands.Bot(command_prefix='s!', description=description, intents=intents
 
 
 @bot.command()
-async def owoify(ctx, message: str):
+async def owoify(ctx, *message: str):
     await ctx.send(make_owoify(message))
 
 token = input("Enter your Token: ")
