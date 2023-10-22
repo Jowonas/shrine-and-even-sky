@@ -1,6 +1,6 @@
 import textwrap
 
-from src.frontend.mini_games.simple_classics import guess_the_number, rock_paper_scissors, quiz_game
+from src.cheese_playground.mini_games.simple_classics import guess_the_number, rock_paper_scissors, quiz_game
 
 
 def main():
