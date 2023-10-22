@@ -20,4 +20,4 @@ token = input("Enter your Token: ")
 bot.run(token)
 
 # Invite:
-# https://discord.com/oauth2/authorize?client_id=1165739276596695150&scope=bot&permissions=8
+# https://discord.com/oauth2/authorize?client_id=1165739276596695150&scope=bot&permissions=28582940765392
