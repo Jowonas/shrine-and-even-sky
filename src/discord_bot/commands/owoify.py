@@ -5,9 +5,9 @@ from src.discord_bot.helpers.command_logging import command_log
 
 
 FACES: list = [
-    '(・`ω´・)', ';;w;;', 'owo', 'UwU', '>w<', '^w^', '(* ^ ω ^)',
-    '(⌒ω⌒)', 'ヽ(*・ω・)ﾉ', '(o´∀`o)', '(o･ω･o)', '＼(＾▽＾)／',
-    '(*^ω^)', '(◕‿◕✿)', '(◕ᴥ◕)', 'ʕ•ᴥ•ʔ', 'ʕ￫ᴥ￩ʔ', '(*^.^*)', '(｡♥‿♥｡)',
+    '(・ω・)', ';;w;;', 'owo', 'UwU', '>w<', '^w^', '(* ^ ω ^)',
+    '(⌒ω⌒)', 'ヽ(*・ω・)ﾉ', '(o･ω･o)', '＼(＾▽＾)／',
+    '(*^ω^)', '(◕‿◕✿)', '(◕ᴥ◕)', 'ʕ•ᴥ•ʔ', 'ʕ￫ᴥ￩ʔ', '(^.^)', '(｡♥‿♥｡)',
     'OwO', 'uwu', 'uvu', 'UvU', '(*￣з￣)', '(つ✧ω✧)つ', '(/ =ω=)/',
     '(╯°□°）╯︵ ┻━┻', '┬─┬ ノ( ゜-゜ノ)', '¯\\_(ツ)_/¯'
 ]
@@ -49,7 +49,7 @@ def make_owoify(message: str | tuple[str]) -> str:
     message_parts = message.split()
     message = ""
     for word in message_parts:
-        if word not in CHARACTERS.values():
+        if not any(substring in word for substring in CHARACTERS.values()):
             word = word.replace("r", "w")
             word = word.replace("o", "owo")
             word = word.replace("u", "uwu")
